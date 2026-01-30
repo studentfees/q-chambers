@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.qchambers.controller.ClientController" spacing="10">
+    <children>
+        <Text text="Client Database" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+        <TableView fx:id="clientTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="nameColumn" text="Name" prefWidth="150"/>
+                <TableColumn fx:id="emailColumn" text="Email" prefWidth="150"/>
+                <TableColumn fx:id="phoneColumn" text="Phone" prefWidth="100"/>
+                <TableColumn fx:id="addressColumn" text="Address" prefWidth="200"/>
+            </columns>
+        </TableView>
+        <HBox spacing="10">
+            <VBox spacing="5">
+                <Label text="ID:"/>
+                <TextField fx:id="idField"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Name:"/>
+                <TextField fx:id="nameField"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Email:"/>
+                <TextField fx:id="emailField"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Phone:"/>
+                <TextField fx:id="phoneField"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Address:"/>
+                <TextArea fx:id="addressArea" prefRowCount="3"/>
+            </VBox>
+        </HBox>
+        <HBox spacing="10">
+            <Button text="Add" onAction="#addClient"/>
+            <Button text="Update" onAction="#updateClient"/>
+            <Button text="Delete" onAction="#deleteClient"/>
+            <Button text="Select" onAction="#selectClient"/>
+        </HBox>
+    </children>
+</VBox>

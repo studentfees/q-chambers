@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.qchambers.controller.BillController" spacing="10">
+    <children>
+        <Text text="Billing" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+        <TableView fx:id="billTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="caseIdColumn" text="Case ID" prefWidth="100"/>
+                <TableColumn fx:id="amountColumn" text="Amount" prefWidth="100"/>
+                <TableColumn fx:id="descriptionColumn" text="Description" prefWidth="200"/>
+                <TableColumn fx:id="dateColumn" text="Date" prefWidth="100"/>
+                <TableColumn fx:id="paidColumn" text="Paid" prefWidth="50"/>
+            </columns>
+        </TableView>
+        <HBox spacing="10">
+            <VBox spacing="5">
+                <Label text="ID:"/>
+                <TextField fx:id="idField"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Case ID:"/>
+                <TextField fx:id="caseIdField"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Amount:"/>
+                <TextField fx:id="amountField"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Description:"/>
+                <TextField fx:id="descriptionField"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Date:"/>
+                <DatePicker fx:id="datePicker"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Paid:"/>
+                <CheckBox fx:id="paidCheckBox"/>
+            </VBox>
+        </HBox>
+        <HBox spacing="10">
+            <Button text="Add" onAction="#addBill"/>
+            <Button text="Update" onAction="#updateBill"/>
+            <Button text="Delete" onAction="#deleteBill"/>
+            <Button text="Select" onAction="#selectBill"/>
+        </HBox>
+    </children>
+</VBox>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.qchambers.controller.AppointmentController" spacing="10">
+    <children>
+        <Text text="Scheduling" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+        <TableView fx:id="appointmentTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="titleColumn" text="Title" prefWidth="150"/>
+                <TableColumn fx:id="clientIdColumn" text="Client ID" prefWidth="100"/>
+                <TableColumn fx:id="caseIdColumn" text="Case ID" prefWidth="100"/>
+                <TableColumn fx:id="dateTimeColumn" text="Date & Time" prefWidth="150"/>
+                <TableColumn fx:id="locationColumn" text="Location" prefWidth="150"/>
+                <TableColumn fx:id="notesColumn" text="Notes" prefWidth="200"/>
+            </columns>
+        </TableView>
+        <HBox spacing="10">
+            <VBox spacing="5">
+                <Label text="ID:"/>
+                <TextField fx:id="idField"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Title:"/>
+                <TextField fx:id="titleField"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Client ID:"/>
+                <TextField fx:id="clientIdField"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Case ID:"/>
+                <TextField fx:id="caseIdField"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Date:"/>
+                <DatePicker fx:id="datePicker"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Time (HH:MM):"/>
+                <TextField fx:id="timeField"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Location:"/>
+                <TextField fx:id="locationField"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Notes:"/>
+                <TextArea fx:id="notesArea" prefRowCount="3"/>
+            </VBox>
+        </HBox>
+        <HBox spacing="10">
+            <Button text="Add" onAction="#addAppointment"/>
+            <Button text="Update" onAction="#updateAppointment"/>
+            <Button text="Delete" onAction="#deleteAppointment"/>
+            <Button text="Select" onAction="#selectAppointment"/>
+        </HBox>
+    </children>
+</VBox>

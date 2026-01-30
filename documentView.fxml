@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.qchambers.controller.DocumentController" spacing="10">
+    <children>
+        <Text text="Document Storage" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+        <TableView fx:id="documentTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="nameColumn" text="Name" prefWidth="150"/>
+                <TableColumn fx:id="typeColumn" text="Type" prefWidth="100"/>
+                <TableColumn fx:id="caseIdColumn" text="Case ID" prefWidth="100"/>
+                <TableColumn fx:id="uploadDateColumn" text="Upload Date" prefWidth="100"/>
+                <TableColumn fx:id="filePathColumn" text="File Path" prefWidth="200"/>
+            </columns>
+        </TableView>
+        <HBox spacing="10">
+            <VBox spacing="5">
+                <Label text="ID:"/>
+                <TextField fx:id="idField"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Name:"/>
+                <TextField fx:id="nameField"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Type:"/>
+                <TextField fx:id="typeField"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Case ID:"/>
+                <TextField fx:id="caseIdField"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Upload Date:"/>
+                <DatePicker fx:id="uploadDatePicker"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="File Path:"/>
+                <HBox spacing="5">
+                    <TextField fx:id="filePathField"/>
+                    <Button fx:id="chooseFileButton" text="Choose File" onAction="#chooseFile"/>
+                </HBox>
+            </VBox>
+        </HBox>
+        <HBox spacing="10">
+            <Button text="Add" onAction="#addDocument"/>
+            <Button text="Update" onAction="#updateDocument"/>
+            <Button text="Delete" onAction="#deleteDocument"/>
+            <Button text="Select" onAction="#selectDocument"/>
+        </HBox>
+    </children>
+</VBox>

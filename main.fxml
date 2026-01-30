@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.qchambers.controller.MainController">
+    <children>
+        <Text text="Q-Chambers Law Firm Management System" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+        <HBox spacing="10">
+            <Button text="Clients" onAction="#handleClients"/>
+            <Button text="Cases" onAction="#handleCases"/>
+            <Button text="Documents" onAction="#handleDocuments"/>
+            <Button text="Bills" onAction="#handleBills"/>
+            <Button text="Appointments" onAction="#handleAppointments"/>
+        </HBox>
+    </children>
+</VBox>

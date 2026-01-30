@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.qchambers.controller.CaseController" spacing="10">
+    <children>
+        <Text text="Case Management" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+        <TableView fx:id="caseTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="titleColumn" text="Title" prefWidth="150"/>
+                <TableColumn fx:id="clientIdColumn" text="Client ID" prefWidth="100"/>
+                <TableColumn fx:id="statusColumn" text="Status" prefWidth="100"/>
+                <TableColumn fx:id="openDateColumn" text="Open Date" prefWidth="100"/>
+                <TableColumn fx:id="closeDateColumn" text="Close Date" prefWidth="100"/>
+                <TableColumn fx:id="descriptionColumn" text="Description" prefWidth="200"/>
+            </columns>
+        </TableView>
+        <HBox spacing="10">
+            <VBox spacing="5">
+                <Label text="ID:"/>
+                <TextField fx:id="idField"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Title:"/>
+                <TextField fx:id="titleField"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Client ID:"/>
+                <TextField fx:id="clientIdField"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Status:"/>
+                <ComboBox fx:id="statusComboBox"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Open Date:"/>
+                <DatePicker fx:id="openDatePicker"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Close Date:"/>
+                <DatePicker fx:id="closeDatePicker"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Description:"/>
+                <TextArea fx:id="descriptionArea" prefRowCount="3"/>
+            </VBox>
+        </HBox>
+        <HBox spacing="10">
+            <Button text="Add" onAction="#addCase"/>
+            <Button text="Update" onAction="#updateCase"/>
+            <Button text="Delete" onAction="#deleteCase"/>
+            <Button text="Select" onAction="#selectCase"/>
+        </HBox>
+    </children>
+</VBox>
